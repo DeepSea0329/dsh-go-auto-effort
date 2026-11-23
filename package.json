@@ -1,7 +1,6 @@
 {
   "name": "local-auto-effort",
   "version": "0.1.0",
-  "private": true,
   "description": "dsh-go 原生插件：按消息内容自动选择模型的思考档位。",
   "license": "MIT",
   "repository": {
@@ -20,8 +19,15 @@
     "reasoning-effort",
     "auto-thinking"
   ],
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "prepublishOnly": "npm test"
   },
   "type": "module",
   "main": "lib/index.js",
@@ -31,6 +37,7 @@
     }
   },
   "engines": {
+    "node": ">=22",
     "dsh": ">=0.2.1-rc.2 <0.3.0-0"
   },
   "dshGo": {
