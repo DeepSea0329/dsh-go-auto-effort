@@ -1,0 +1,73 @@
+{
+  "name": "local-auto-effort",
+  "version": "0.1.0",
+  "private": true,
+  "description": "dsh-go 原生插件：按消息内容自动选择模型的思考档位。",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeepSea0329/dsh-go-auto-effort.git"
+  },
+  "homepage": "https://github.com/DeepSea0329/dsh-go-auto-effort#readme",
+  "bugs": {
+    "url": "https://github.com/DeepSea0329/dsh-go-auto-effort/issues"
+  },
+  "keywords": [
+    "dsh-go",
+    "dsh",
+    "cordis",
+    "plugin",
+    "reasoning-effort",
+    "auto-thinking"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "dsh": ">=0.2.1-rc.2 <0.3.0-0"
+  },
+  "dshGo": {
+    "v": 1,
+    "title": {
+      "zh": "自动思考",
+      "en": "Auto effort"
+    },
+    "icon": "sparkle",
+    "contributes": {
+      "composer.strip": [
+        {
+          "id": "auto-effort-strip",
+          "icon": "sparkle",
+          "text": {
+            "zh": "自动思考",
+            "en": "Auto effort"
+          },
+          "panel": "auto-effort"
+        }
+      ],
+      "panels": [
+        {
+          "id": "auto-effort",
+          "title": {
+            "zh": "自动思考",
+            "en": "Auto effort"
+          },
+          "icon": "sparkle",
+          "placement": [
+            "chat.panel",
+            "session.tab",
+            "features"
+          ],
+          "presentation": "sheet"
+        }
+      ]
+    }
+  }
+}
